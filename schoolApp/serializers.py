@@ -7,7 +7,7 @@ from .models import (
 
 
 class StudentSerializer(serializers.ModelSerializer):
-    school = serializers.CharField(source="school.name", read_only=True)
+    schoolName = serializers.CharField(source="schoolName.name", read_only=True)
 
     class Meta:
         model = Student
