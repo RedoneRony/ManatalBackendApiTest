@@ -7,11 +7,22 @@ from .models import (
 
 
 class StudentSerializer(serializers.ModelSerializer):
-    school = serializers.CharField(source="school.name", read_only=True)
 
     class Meta:
         model = Student
-        fields = "__all__"
+        fields = [ "id","firstName","lastName","nationality","age","studentIdentificationNumber", "schoolName"]
+
+    def create(self, validated_data):
+        school_id = self.context["schoolName_id"]
+        school = School.objects.get(id=school_id)
+        serializer = SchoolSerializer(school, many=False)
+        if serializer.data["maximum_number_of_students"] > 0:
+            school.maximum_number_of_students = serializer.data["maximum_number_of_students"] - 1
+            school.save()
+            return Student.objects.create(schoolName_id = school_id,  **validated_data)
+        else:
+            raise serializers.ValidationError("This School didn't had space to add new student")
+        
 
 
 class SchoolSerializer(serializers.ModelSerializer):
