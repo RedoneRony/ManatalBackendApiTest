@@ -11,3 +11,8 @@ Also i implement nested routers, search and filter query params.
 
 
 So anyone can easily search someting based on my implemented fields.
+
+
+- Endpoint `students/` will return all students (GET) and allow student creation (POST)
+- Endpoint `/schools/` will return all schools (GET) and allow school creation (POST)
+- Endpoint `/schools/:id` and `/students/:id` will return the object by :id (GET) and allow editing (PUT/PATCH) or deleting (DELETE)
