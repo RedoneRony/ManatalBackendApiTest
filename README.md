@@ -5,6 +5,8 @@ Database Design:
 Here Basically i covered two crud operations. 
 1. school
 2. student
+
+
 Also i implement nested routers, search and filter query params.
 
 
