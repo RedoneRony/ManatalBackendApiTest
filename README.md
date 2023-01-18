@@ -6,4 +6,6 @@ Here Basically i covered two crud operations.
 1. school
 2. student
 Also i implement nested routers, search and filter query params.
+
+
 So anyone can easily search someting based on my implemented fields.
