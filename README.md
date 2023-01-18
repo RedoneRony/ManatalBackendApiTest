@@ -20,3 +20,15 @@ So anyone can easily search someting based on my implemented fields.
 - Endpoint /schools/:id/students will return students who belong to school :id (GET)
 - Endpoint /schools/:id/students will allow student creation in the school :id (POST)
 - nested endpoint will allow GET/PUT/PATCH/DELETE methods on /schools/:id/students/:id
+
+
+Time BreakDown:
+
+1. For creating basic boilerplate, database design, requirements specifications and corners case cheking. (1 hour)
+
+2. Write database model,serializations and complete crud operations of individual table. overall(2 hours)
+
+3. Logical case handling, errors handling and model viewset implementation because initially i was implemented api using api view decorator then shift to model viewset for nested routing. (2 hours)
+
+4. Nested routing implementation,checking all cases and modify create function in serializer file, add requirements.txt file and adding search, filter quey in query params. (2.5 hours)
+
